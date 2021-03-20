@@ -7,6 +7,10 @@ require 'builder.php';
 if (isset($_SESSION["session_username"])) {
     $query_builder = new Query_builder();
     $result = $query_builder->select("users", null, 'username = "' . $_SESSION['session_username'] . '" LIMIT 1');
+} else {
+    echo "<script>alert(\"Вам сюда нельзя!\");</script>";
+    echo " <script language=\"JavaScript\">window.location.href = document.location.origin + \"/builder/login.php\"</script>";
+}
 ?>
 
 <head>
@@ -173,9 +177,3 @@ if (isset($_SESSION["session_username"])) {
     </script>
 </div>
 </body>
-
-<?php
-} else {
-    echo "<script>alert(\"Вам сюда нельзя!\");</script>";
-    echo " <script language=\"JavaScript\">window.location.href = document.location.origin + \"/builder/login.php\"</script>";
-}

@@ -1,8 +1,4 @@
 <?php
-define("DB_SERVER", "localhost");
-define("DB_USER", "root");
-define("DB_PASS", "");
-define("DB_NAME", "Base");
 require 'builder.php';
 
 $query_builder = new Query_builder();
